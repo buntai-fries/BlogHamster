@@ -1,2 +1,16 @@
-<%- include("partials/header.ejs") %>
-  <%- include("partials/footer.ejs") %>
+<%- include("partials/headers.ejs") %>
+
+  <h2>
+    Publish your passions, your way
+  </h2>
+
+  <h3>
+    Create a unique and beautiful blog easily.
+  </h3>
+
+  <form method="POST" action="/post-and-create">
+    <textarea id="userPost" name="userPost" class="feedback-input" placeholder=""> </textarea>
+    <input type="submit" value="Publish the blog">
+  </form>
+
+  <%- include("partials/footers.ejs") %>
