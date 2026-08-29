@@ -3,8 +3,10 @@
   <h2>
     Your Stories
   </h2>
-  <p>
-    <%= _userPost %>
-  </p>
+
+  <form method="POST" action="/post-and-create">
+    <textarea id="userPost" name="userPost" class="feedback-input" placeholder=""> <%= myEssay %> </textarea>
+    <input type="submit" value="Publish the blog">
+  </form>
 
   <%- include("partials/footers.ejs") %>

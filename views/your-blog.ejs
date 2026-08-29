@@ -1,0 +1,15 @@
+<%- include("partials/headers.ejs") %>
+
+  <h2>Your Stories</h2>
+
+  <p>
+    <%= _userPost %>
+  </p>
+
+  <h2>Edit the blog</h2>
+
+  <form method="POST" action="/edit">
+    <input type="submit" value="Edit the blog">
+  </form>
+
+  <%- include("partials/footers.ejs") %>
