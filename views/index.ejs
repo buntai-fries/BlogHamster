@@ -1,21 +1,21 @@
 <%- include("partials/headers.ejs") %>
 
-  <h2>
-    Publish your passions, your way
-  </h2>
+  <h2>Publish your passions, your way</h2>
+  <h3>Create a unique and beautiful blog easily.</h3>
 
-  <h3>
-    Create a unique and beautiful blog easily.
-  </h3>
+  <a href="/create" class="customLink">Create the blog</a>
 
-  <form method="POST" action="/create">
-    <input type="submit" value="Create the blog">
-  </form>
+  <% if (locals.allPosts && locals.allPosts.length !=0) { %>
+    <h3>Read your Stories</h3>
+    <% allPosts.forEach(function(post) { %>
+      <div>
+        <h4>
+          <%= post.title %>
+        </h4>
 
-  <h3> Read your Stories </h3>
+        <a href="/read/<%= post.title %>" class="customLink">Read Post</a>
+      </div>
+      <% }) %>
+        <% } %>
 
-  <form method="POST" action="/read">
-    <input type="submit" value="Read your blog">
-  </form>
-
-  <%- include("partials/footers.ejs") %>
+          <%- include("partials/footers.ejs") %>

@@ -1,12 +1,17 @@
 <%- include("partials/headers.ejs") %>
+  <h2>Your Stories</h2>
 
-  <h2>
-    Your Stories
-  </h2>
+  <h3>
+    <%= myEssay.title %>
+  </h3>
 
   <form method="POST" action="/post-and-create">
-    <textarea id="userPost" name="userPost" class="feedback-input" placeholder=""> <%= myEssay %> </textarea>
-    <input type="submit" value="Publish the blog">
+    <input type="text" name="postTitle" placeholder="Enter Blog Title" required>
+
+    <textarea id="userPost" name="userPost" class="feedback-input"
+      placeholder="Write your story here..."><%= myEssay.content %></textarea>
+
+    <input type="submit" class="customLink" value="Publish the blog">
   </form>
 
   <%- include("partials/footers.ejs") %>
