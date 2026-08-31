@@ -26,6 +26,19 @@ app.post("/post-and-create", (req, res) => {
   res.redirect("/");
 });
 
+app.post("/edit", (req, res) => {
+  const originalTitle = req.body.originalTitle; // from hidden input
+  const index = posts.findIndex((p) => p.title === originalTitle);
+
+  if (index !== -1) {
+    posts[index] = {
+      title: req.body.postTitle,
+      content: req.body.userPost,
+    };
+  }
+  res.redirect("/");
+});
+
 app.get("/read/:postName", (req, res) => {
   const requestedTitle = req.params.postName;
   const foundPost = posts.find((post) => post.title === requestedTitle);
@@ -35,7 +48,7 @@ app.get("/read/:postName", (req, res) => {
 app.get("/edit/:postName", (req, res) => {
   const requestedTitle = req.params.postName;
   const foundPost = posts.find((post) => post.title === requestedTitle);
-  res.render("sample-blog.ejs", { myEssay: foundPost });
+  res.render("edit.ejs", { myEssay: foundPost });
 });
 
 app.listen(port, () => {

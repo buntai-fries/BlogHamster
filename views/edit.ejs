@@ -1,0 +1,15 @@
+<%- include("partials/headers.ejs") %>
+  <h2>Edit the Stories</h2>
+
+  <h3>
+    <%= myEssay.title %>
+  </h3>
+
+  <form action="/edit" method="POST">
+    <input type="hidden" name="originalTitle" value="<%= myEssay.title %>">
+    <input type="text" name="postTitle" value="<%= myEssay.title %>">
+    <textarea name="userPost"><%= myEssay.content %></textarea>
+    <button type="submit">Save</button>
+  </form>
+
+  <%- include("partials/footers.ejs") %>

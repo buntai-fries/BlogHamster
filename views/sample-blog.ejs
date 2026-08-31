@@ -1,14 +1,10 @@
 <%- include("partials/headers.ejs") %>
-  <h2>Your Stories</h2>
-
-  <h3>
-    <%= myEssay.title %>
-  </h3>
+  <h2>Write the Stories</h2>
 
   <form method="POST" action="/post-and-create">
     <input type="text" name="postTitle" placeholder="Enter Blog Title" required>
 
-    <textarea id="userPost" name="userPost" class="feedback-input"
+    <textarea name="userPost" class="feedback-input"
       placeholder="Write your story here..."><%= myEssay.content %></textarea>
 
     <input type="submit" class="customLink" value="Publish the blog">
